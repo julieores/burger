@@ -1,2 +1,4 @@
 # burger
-demo of git pages
+heroku build was successful
+
+to do: CSS, add project's table to JAWSDB
