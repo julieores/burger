@@ -20,15 +20,17 @@ function objToSql(ob) {
 
   // loop through the keys and push the key/value as a string int arr
   for (var key in ob) {
-    var value = ob[key];
+    var arr = [];
 
+  for (var key in ob){
     if (Object.hasOwnProperty.call(ob, key)) {
+      arr.push(key + "=" + ob[key])
 
-      if (typeof value === "string" && value.indexOf(" ") >= 0) {
-        value = "'" + value + "'";
+      // if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        // value = "'" + value + "'";
       }
 
-      arr.push(key + "=" + value);
+      // arr.push(key + "=" + value);
     }
   }
 

@@ -1,9 +1,33 @@
 /* to do: CSS & insert burger image*/
 
+li {
+padding: 20px;
+margin: 15pm;
+background: #76d7c4
+}
+
+.label {
+    font-weight: bold;
+
+}
+
+.center {
+    text-align: center
+}
+
+.right {
+    align-content: right
+
+}
+
+img {
+ align-content: right
+
+
+}
+
 body {
-
-
-
-
+    background-color: #d1f2eb;
+    
 
 }
