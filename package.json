@@ -22,6 +22,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.12",
+    "myql": "^1.0.0",
     "mysql": "^2.16.0"
   },
   "devDependencies": {}
