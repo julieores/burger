@@ -6,7 +6,7 @@ var router = express.Router();
 var burger = require("../models/burgers.js");
 
 router.get("/", function (req, res) {
-    burger.all(function (data) {
+    burger.selectAll(function (data) {
         var hbsObject = {
             burgers: data
         };
@@ -17,44 +17,35 @@ router.get("/", function (req, res) {
 });
 
 router.post("/", function (req, res) {
-    burger.create([
-        "burger_name", "devoured"
-    ], [
-        req.body.burger_name, "0"
-    ], function (result) {
+    burger.insertOne(req.body.burger_name), function()
+{
+
         res.redirect("/");
-    });
+    };
 });
 
 router.put("/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+    var condition = req.params.id;
 
     console.log("condition", condition);
+    burgers.updateOne(conidition, function(){
+        res.redirect("/")
 
-    burger.update({
-        devoured: req.body.devoured
-    }, condition, function (result) {
-        if (result.changedRows == 0) {
-
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
     });
 });
 
-router.delete("/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+// // router.delete("/:id", function (req, res) {
+// //     var condition = "id = " + req.params.id;
 
-    burger.delete(condition, function (result) {
-        if (result.affectedRows == 0) {
+// //     burger.delete(condition, function (result) {
+// //         if (result.affectedRows == 0) {
 
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
-    });
-});
+// //             return res.status(404).end();
+// //         } else {
+// //             res.status(200).end();
+// //         }
+// //     });
+// });
 
 
 module.exports = router;
